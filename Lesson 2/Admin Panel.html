@@ -1,0 +1,19 @@
+<div id="adminPanel" style="display: none">
+    <h3>Admin Panel</h3>
+    <p>Manage users, view reports, and edit settings.</p>
+</div>
+
+<script>
+    if (userRole === "Admin") {
+        document.getElementById("adminPanel").style.display = "block";
+    }
+</script>
+
+<script>
+    if (!localStorage.getItem("token")) {
+        window.location.herf = "login.html"; // Redirect if not logged in
+    } else if (userRole !== "Admin"){
+        alert("Access denied. Admins only.");
+        window.location.herf = "dashboard.html"; // Redirect unauthorized users
+    }
+</script>
